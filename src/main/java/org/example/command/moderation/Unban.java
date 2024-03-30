@@ -1,22 +1,17 @@
 package org.example.command.moderation;
 
 import net.dv8tion.jda.api.Permission;
-import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.entities.UserSnowflake;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.example.commandmeta.ICommandRestricted;
-import org.example.commandmeta.JCommand;
 import org.example.commandmeta.SlashCommand;
 import org.example.commandmeta.SlashContext;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Unban implements SlashCommand, ICommandRestricted {
 	private final String name = "unban";

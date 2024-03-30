@@ -1,18 +1,14 @@
 package org.example.i18n;
 
-import org.example.entity.GuildEntity;
 import org.example.service.BotDb;
-import org.example.service.GuildsService;
 
 import java.text.MessageFormat;
 import java.util.Locale;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class I18n {
 	private static final BotDb db = BotDb.getDb();
-	//	private static Map<Long, GuildEntity> guilds = GuildsService.getGuilds();
-//	public static final String DEFAULTLOCALE = "en_US";
+	//	public static final String DEFAULTLOCALE = "en_US";
 	private final String guildLocale;
 
 	public I18n(Long guildId) {
@@ -28,7 +24,6 @@ public class I18n {
 //			return bundle.getString(key);
 //		}
 //
-////		log
 //		System.out.println("There is no language entry for the locale " + locale);
 //		return ResourceBundle.getBundle("lang.bottext", new Locale(DEFAULTLOCALE)).getString(key);
 	}

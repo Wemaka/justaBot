@@ -6,7 +6,6 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.example.api.Rule34Api;
-import org.example.commandmeta.JCommand;
 import org.example.commandmeta.SlashCommand;
 import org.example.commandmeta.SlashContext;
 import org.jsoup.nodes.Element;

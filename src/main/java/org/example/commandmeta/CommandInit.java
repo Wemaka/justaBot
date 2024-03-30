@@ -11,16 +11,6 @@ import org.example.command.moderation.*;
 
 //@Component
 public class CommandInit {
-//	private final GuildsService guildsService;
-//	private final SettingsGuildService settingsGuildService;
-//
-//	@Autowired
-//	public CommandInit(GuildsService guildsService, SettingsGuildService settingsGuildService) {
-//		this.guildsService = guildsService;
-//		this.settingsGuildService = settingsGuildService;
-//	}
-
-
 	public static void initCommands() {
 		CommandRegistry adminModule = new CommandRegistry(Module.MODERATION);
 		adminModule.addCommands(

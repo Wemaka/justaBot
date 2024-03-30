@@ -2,21 +2,15 @@ package org.example.command.moderation;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.User;
-import net.dv8tion.jda.api.exceptions.ErrorHandler;
-import net.dv8tion.jda.api.interactions.commands.Command;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
-import net.dv8tion.jda.api.requests.ErrorResponse;
 import org.example.commandmeta.ICommandRestricted;
-import org.example.commandmeta.JCommand;
 import org.example.commandmeta.SlashCommand;
 import org.example.commandmeta.SlashContext;
 
-import java.util.EnumSet;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -95,7 +89,6 @@ public class Ban implements SlashCommand, ICommandRestricted {
 	public List<OptionData> getOptions() {
 		return List.of(
 				new OptionData(OptionType.USER, optionNameOne, optionDescriptionOne, true),
-				//? это по идее саб команда
 //				new OptionData(OptionType.STRING, optionNameTwo, optionDescriptionTwo, true)
 //						.addChoices(
 //								new Command.Choice("Days", "days"),

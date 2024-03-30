@@ -11,15 +11,12 @@ import net.dv8tion.jda.api.entities.channel.unions.GuildChannelUnion;
 import net.dv8tion.jda.api.events.interaction.command.GenericCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.requests.ErrorResponse;
-import net.dv8tion.jda.api.requests.RestAction;
-import org.example.entity.GuildEntity;
 import org.example.entity.GuildSettingsEntity;
 import org.example.i18n.I18n;
 import org.example.service.BotDb;
 import net.dv8tion.jda.api.exceptions.ErrorHandler;
 
 import java.awt.*;
-import java.util.EnumSet;
 import java.util.List;
 import java.util.Objects;
 
@@ -30,9 +27,6 @@ public abstract class Context<T extends GenericCommandInteractionEvent> {
 	protected final I18n i18n;
 	private boolean ephemeral = false;
 	private boolean defered = false;
-
-//	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringApplicationConfiguration.class);
-//	BotDb db = context.getBean("botDb", BotDb.class);
 
 	public Context(T event) {
 		this.event = event;

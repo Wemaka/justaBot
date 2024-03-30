@@ -1,7 +1,6 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
-//import org.checkerframework.checker.units.qual.C;
 
 @Entity
 @Table(name = "guild_settings")

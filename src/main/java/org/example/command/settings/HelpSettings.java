@@ -52,7 +52,7 @@ public class HelpSettings implements SlashCommand, ICommandRestricted {
 		guildSettings.setSendingHelp(send);
 		ctx.getDb().updateDb(guildSettings);
 
-		ctx.ephemeral().reply(ctx.getI18n("help-settingsResponseMessage", send));
+		ctx.ephemeral().reply(ctx.getI18n("help-settingsResponseMessage", ctx.getI18n(name + ".options." + optionNameOne + ".choices." + send + ".name")));
 	}
 
 	@Override

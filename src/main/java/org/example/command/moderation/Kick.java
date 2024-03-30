@@ -8,7 +8,6 @@ import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import org.example.commandmeta.ICommandRestricted;
-import org.example.commandmeta.JCommand;
 import org.example.commandmeta.SlashCommand;
 import org.example.commandmeta.SlashContext;
 

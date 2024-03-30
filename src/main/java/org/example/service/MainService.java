@@ -12,17 +12,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MainService {
-//	private final GuildsService guildsService;
-//	private final SettingsGuildService settingsGuildService;
-//	private final GuildEventsHandler guildEventsHandler;
-//
-//	@Autowired
-//	public MainService(GuildsService guildsService, SettingsGuildService settingsGuildService, GuildEventsHandler guildEventsHandler) {
-//		this.guildsService = guildsService;
-//		this.settingsGuildService = settingsGuildService;
-//		this.guildEventsHandler = guildEventsHandler;
-//	}
-
 	private ShardManager shardManager;
 
 	@Value("${bot.token}")
@@ -36,13 +25,6 @@ public class MainService {
 				.setChunkingFilter(ChunkingFilter.ALL);
 //		builder.enableCache(CacheFlag.)
 		shardManager = builder.build();
-
-
-//		guildsService.initGuilds();
-//		CommandInit.initCommands();
-
-//		shardManager.addEventListener(new CommandRegistry());
-//		shardManager.addEventListener(guildEventsHandler);
 	}
 
 	public ShardManager getShardManager() {

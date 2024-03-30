@@ -1,13 +1,9 @@
 package org.example.commandmeta;
 
-
-import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
-import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import org.example.commandmeta.util.Module;
-import org.example.i18n.I18n;
-import org.springframework.stereotype.Component;
 
 import java.util.*;
 
@@ -68,10 +64,18 @@ public class CommandRegistry {
 		}
 	}
 
-	public void registerCommands(GenericGuildEvent event) {
+	public void registerCommands(GenericGuildEvent event, String guildId) {
 		for (CommandRegistry module : getValuesModule()) {
 			for (SlashCommand command : module.getCommands()) {
-				event.getGuild().upsertCommand(command.getCommandData()).queue();
+				event.getJDA().getGuildById(guildId).upsertCommand(command.getCommandData()).queue();
+			}
+		}
+	}
+
+	public void registerGlobalCommands(ReadyEvent event) {
+		for (CommandRegistry module : getValuesModule()) {
+			for (SlashCommand command : module.getCommands()) {
+				event.getJDA().upsertCommand(command.getCommandData()).queue();
 			}
 		}
 	}

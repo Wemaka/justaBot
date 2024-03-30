@@ -24,10 +24,6 @@ public class GuildsService {
 		}
 	}
 
-//	public void addGuild(GuildEntity guildEntity) {
-//		guilds.put(guildEntity.getGuildId(), guildEntity);
-//	}
-
 	public Map<Long, GuildEntity> getGuilds() {
 		return guilds;
 	}

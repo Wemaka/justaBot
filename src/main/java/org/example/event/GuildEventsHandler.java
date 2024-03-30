@@ -7,12 +7,12 @@ import net.dv8tion.jda.api.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.api.events.guild.GuildLeaveEvent;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.example.commandmeta.CommandRegistry;
 import org.example.entity.GuildEntity;
 import org.example.entity.GuildSettingsEntity;
 import org.example.service.BotDb;
-import org.example.service.GuildsService;
 import org.jetbrains.annotations.NotNull;
 
 import java.text.MessageFormat;
@@ -49,10 +49,6 @@ public class GuildEventsHandler extends ListenerAdapter {
 
 	@Override
 	public void onGuildReady(@NotNull GuildReadyEvent event) {
-		CommandRegistry commandRegistry = new CommandRegistry();
-//		String locale = event.getGuild().getLocale().getLocale();
-
-		commandRegistry.registerCommands(event);
 		saveGuild(event);
 	}
 
@@ -60,13 +56,15 @@ public class GuildEventsHandler extends ListenerAdapter {
 	public void onGuildJoin(@NotNull GuildJoinEvent event) {
 		DefaultGuildChannelUnion channel = event.getGuild().getDefaultChannel();
 		if (channel != null) {
-			channel.asTextChannel().sendMessage("Hi. My name is \"Just A Bot\"").queue();
+			channel.asTextChannel().sendMessage("Hi. I'm \"Just A Bot\"\nUse **/help** to see what I can do.").queue();
 		}
-
-		CommandRegistry commandRegistry = new CommandRegistry();
-
-		commandRegistry.registerCommands(event);
 		saveGuild(event);
+	}
+
+	@Override
+	public void onReady(@NotNull ReadyEvent event) {
+		CommandRegistry commandRegistry = new CommandRegistry();
+		commandRegistry.registerGlobalCommands(event);
 	}
 
 	@Override
