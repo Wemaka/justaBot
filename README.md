@@ -6,3 +6,4 @@ To run locally, you will need to change the variables **(they look like ${})** i
 docker-compose build
 docker-compose up
 ```
+And run the `main` method in `ApplicationBot.java`
